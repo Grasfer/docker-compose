@@ -7,7 +7,7 @@ services:
     environment:
       - GID=1000
       - COLLECTIONS=crowdsecurity/nginx crowdsecurity/http-cve crowdsecurity/whitelist-good-actors
-      - CUSTOM_HOSTNAME=bitwar.grasfer.com
+      - CUSTOM_HOSTNAME=<domain.com>
     volumes:
       - /opt/appdata/crowdsec/config:/etc/crowdsec:rw
       - /opt/appdata/crowdsec/data:/var/lib/crowdsec/data:rw
@@ -28,11 +28,11 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/Stockholm
-      - URL=scaredofgirls.com
+      - URL=<domain.com>
       - SUBDOMAINS=wildcard
       - VALIDATION=dns
       - DNSPLUGIN=cloudflare
-      - EMAIL=grasferserver@protonmail.com #optional
+      - EMAIL=<your@email.com> #optional
       - ONLY_SUBDOMAINS=false #optional
       - STAGING=false #optional
       - DOCKER_MODS=linuxserver/mods:swag-crowdsec
@@ -55,10 +55,10 @@ services:
       - WEBSOCKET_ENABLED=true  # Enable WebSocket notifications.
       - SIGNUPS_ALLOWED=false
       - SMTP_HOST=smtp.fastmail.com
-      - SMTP_FROM=grasferserver@fastmail.com
+      - SMTP_FROM=<from@email.com>
       - SMTP_PORT=465
       - SMTP_SECURITY=force_tls
-      - SMTP_USERNAME=grasfer@fastmail.com
+      - SMTP_USERNAME=<email@fastmail.com>
       - SMTP_PASSWORD=${BITWAR_EMAIL_PASS}
 #      - ADMIN_TOKEN=${BITWAR_ADMIN_TOKEN}
       - DISABLE_ADMIN_TOKEN=true
